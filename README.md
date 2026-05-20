@@ -2,9 +2,6 @@
 Comprehensive Blender toolkit for shapekeys matching, testing drivers, material merging, and clean glTF/GLB web-export optimization.
 # Production Shapekey & Web Exporter (Blender 4.x & 5.x)
 
-[![Blender Version](https://shields.io)](https://blender.org)
-[![License: MIT](https://shields.io)](https://opensource.org)
-
 A comprehensive pipeline toolkit for Blender designed to handle multi-mesh shapekey management, active cross-mesh selection, live driver-driven animation testing, material deduplication, and streamlined glTF/GLB web-export optimization with a single click.
 
 ---
