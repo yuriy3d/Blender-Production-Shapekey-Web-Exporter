@@ -4,6 +4,8 @@ Comprehensive Blender toolkit for shapekeys matching, testing drivers, material 
 
 A comprehensive pipeline toolkit for Blender designed to handle multi-mesh shapekey management, active cross-mesh selection, live driver-driven animation testing, material deduplication, and streamlined glTF/GLB web-export optimization with a single click.
 
+![Addon Screenshot](Screenshot_1.jpg)
+
 ---
 
 ## 🌟 Key Features
