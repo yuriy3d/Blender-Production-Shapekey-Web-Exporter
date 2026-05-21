@@ -21,7 +21,7 @@ A comprehensive pipeline toolkit for Blender designed to handle multi-mesh shape
 * 📉 **Web & glTF Optimization**
   * **Delete Empty Shapekeys:** Scans your meshes and safely deletes shapekeys that do not deform any vertices relative to the Basis key. This shrinks your `.gltf`/`.glb` file sizes dramatically!
   * **Merge Duplicate Materials:** Automatically finds and resolves dot-suffixed duplicate materials (e.g., `metal.001`, `metal.002`), remapping them to the original data block and deleting the clutter. Say goodbye to the notorious glTF image data export crashes!
-  * **Direct GLB Export:** Bypass the tedious multi-step Top Header Menu (`File > Export > glTF 2.0`). Clicking the button in the N-panel instantly opens the native Blender File View window for the glTF/GLB export, allowing you to choose the save directory, rename the asset, and tweak profile settings on the fly.
+  * **Direct GLB Export:** Bypass the tedious multi-step Top Header Menu (`File > Export > glTF 2.0`). Clicking the button in the N-panel instantly opens Blender File View window for the glTF/GLB export, allowing you to choose the save directory, rename the asset, and tweak profile settings on the fly.
 
 ---
 
