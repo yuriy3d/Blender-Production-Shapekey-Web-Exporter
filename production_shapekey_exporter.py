@@ -196,30 +196,20 @@ class OBJECT_OT_merge_duplicate_materials(bpy.types.Operator):
         return {'FINISHED'}
 
 
-# --- 7. OPERATOR: SMART EXPORT BUTTON (OPENS BLENDER FILE VIEW) ---
-class OBJECT_OT_export_optimized_glb(bpy.types.Operator, ExportHelper):
-    """Open Blender File View to let user select save destination and settings for glTF/GLB export"""
+# --- 7. OPERATOR: SMART EXPORT BUTTON (OPENS NATIVE BLENDER EXPORT WINDOW) ---
+class OBJECT_OT_export_optimized_glb(bpy.types.Operator):
+    """Open native Blender glTF 2.0 export window with full original settings panel"""
     bl_idname = "object.export_optimized_glb"
-    bl_label = "Export Optimized .GLB"
-    
-    # Define default file extension for file browser
-    filename_ext = ".glb"
-    
-    filter_glob: StringProperty(
-        default="*.glb;*.gltf",
-        options={'HIDDEN'},
-        maxlen=255,
-    )
+    bl_label = "Export .GLB"
+    bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
-        # Call Blender's native glTF exporter using paths selected by user
-        try:
-            bpy.ops.export_scene.gltf(filepath=self.filepath, export_format='GLB')
-            self.report({'INFO'}, f"Successfully exported to: {self.filepath}")
-            return {'FINISHED'}
-        except Exception as e:
-            self.report({'ERROR'}, f"Export failed: {str(e)}")
-            return {'CANCELLED'}
+        # This fallback is required for internal Blender execution flow
+        return bpy.ops.export_scene.gltf('INVOKE_DEFAULT')
+
+    def invoke(self, context, event):
+        # Force Blender to open the standard file browser for glTF with all settings
+        return bpy.ops.export_scene.gltf('INVOKE_DEFAULT')
 
 
 # --- 8. UI PANEL IN N-PANEL ---
